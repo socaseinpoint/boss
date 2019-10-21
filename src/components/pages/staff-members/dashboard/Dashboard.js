@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './dashboard.module.css';
 import Button from '../../../base/button';
+import DashboardFilter from '../../../partials/dashboard-filter';
 
 const Dashboard = ({ info }) => (
   <div className={styles.dashboard}>
@@ -14,7 +15,7 @@ const Dashboard = ({ info }) => (
         </div>
       </div>
       <div className={styles.filters}>
-        Filters
+        <DashboardFilter />
       </div>
     </div>
   </div>

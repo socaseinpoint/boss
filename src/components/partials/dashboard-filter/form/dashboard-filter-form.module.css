@@ -1,0 +1,13 @@
+.col {
+  width: 50%;
+  margin-right: 20px;
+}
+
+.collast {
+  width: 50%;
+}
+
+
+.row {
+  display: flex;
+}
