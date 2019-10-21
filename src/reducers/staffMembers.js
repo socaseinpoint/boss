@@ -1,4 +1,4 @@
-import initialStaffMembers from '../utils/initialState';
+import { initialStaffMembers } from '../utils/initialState';
 
 const initialState = {
   loading: false,
@@ -16,6 +16,7 @@ const initialState = {
     total: 120,
   },
   results: initialStaffMembers,
+  total: 695,
 };
 
 const staffMembersReducer = (state = initialState) => state;
