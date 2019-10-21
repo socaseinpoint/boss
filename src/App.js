@@ -1,11 +1,8 @@
 import React from 'react';
+import StaffMembers from './components/pages/staff-members';
 
-function App() {
-  return (
-    <div className="App">
-      <div>Boss</div>
-    </div>
-  );
-}
+const App = () => (
+  <StaffMembers />
+);
 
 export default App;
