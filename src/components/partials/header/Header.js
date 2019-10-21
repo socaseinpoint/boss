@@ -1,14 +1,13 @@
 import React from 'react';
-import styles from './header.module.css';
 
 const Header = () => (
-  <header className={styles.header}>
-    <div className={styles.inner}>
-      <div className={styles.sub}>
-        <span className={styles.logo}>Boss</span>
+  <header className="boss-page-header">
+    <div className="boss-page-header__inner">
+      <div className="boss-page-header__group boss-page-header__group_role_logo">
+        <a className="boss-page-header__logo">Boss</a>
       </div>
-      <span className={styles.search}>Loupe</span>
-      <span className={styles.profile}>User</span>
+      <span className="boss-page-header__action boss-page-header__action_role_search">Loupe</span>
+      <span className="boss-page-header__action boss-page-header__action_role_profile">User</span>
     </div>
   </header>
 );

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import DashboardFilterForm from './form';
-import styles from './dropdown.module.css';
 
 const Dropdown = () => {
   const [status] = useState(true);
@@ -16,12 +15,14 @@ const Dropdown = () => {
   };
 
   return (
-    <div>
-      <div>
-        Toggle Form
+    <div className="boss-dropdown">
+      <div className="boss-dropdown__header">
+        <button type="button" className="boss-dropdown__switch boss-dropdown__switch_role_filter">Filter</button>
       </div>
-      <div className={styles.content}>
-        {renderForm()}
+      <div className="boss-dropdown__content boss-dropdown__content_state_opened">
+        <div className="boss-dropdown__content-inner">
+          {renderForm()}
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './staff-members-table.module.css';
+import StaffMember from '../staff-member';
 
 const headings = [
   '',
@@ -15,45 +15,18 @@ const headings = [
 
 function renderHeading(cols) {
   return (
-    <div className={styles.row}>
-      {cols.map((col) => <div className={styles.cellheader} key={col}>{col}</div>)}
+    <div className="boss-table__row">
+      {cols.map((col) => <div className="boss-table__cell boss-table__cell_role_header" key={col}>{col}</div>)}
     </div>
   );
-}
-
-function renderAccessories(accessories) {
-  return accessories[0].name;
-}
-
-function renderCell(children) {
-  return (
-    <div className={styles.cell}>
-      <div className={styles.info}>{children}</div>
-    </div>
-  );
-}
-
-function renderStatus(status) {
-  return status ? 'Enabled' : 'Disabled';
 }
 
 function renderMembers(members) {
-  return members.map((member) => (
-    <div className={styles.row} key={member.id}>
-      {renderCell(member.image)}
-      {renderCell(member.name)}
-      {renderCell(member.modified)}
-      {renderCell(renderAccessories(member.accessories))}
-      {renderCell(renderStatus(member.status))}
-      {renderCell(member.type)}
-      {renderCell(member.masterVenue)}
-      {renderCell(member.workVenues)}
-    </div>
-  ));
+  return members.map((member) => <StaffMember { ...member } />);
 }
 
 const StaffMembersTable = ({ members }) => (
-  <div className={styles.table}>
+  <div className="boss-table boss-table_page_staff-members-index">
     {renderHeading(headings)}
     {renderMembers(members)}
   </div>

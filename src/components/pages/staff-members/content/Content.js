@@ -4,7 +4,6 @@ import { getStaffMembersResults, getStaffMembersPagination } from '../../../../s
 import { setPage } from '../../../../actions/staffMembers';
 import StaffMembersTable from '../../../partials/staff-members-table';
 import Pagination from '../../../partials/pagination';
-import styles from './content.module.css';
 
 const Content = () => {
   const members = useSelector((state) => getStaffMembersResults(state));
@@ -15,8 +14,8 @@ const Content = () => {
   }
 
   return (
-    <div className={styles.content}>
-      <div className={styles.inner}>
+    <div className="boss-page-main__content">
+      <div className="boss-page-main__inner">
         <StaffMembersTable members={members} />
         <Pagination
           current={pagination.current}
