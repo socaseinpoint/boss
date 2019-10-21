@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StaffMembersTable from '../../../partials/staff-members-table';
+import Paginator from '../../../partials/pagination';
 import styles from './content.module.css';
 
 const Content = ({ members }) => (
   <div className={styles.content}>
     <div className={styles.inner}>
       <StaffMembersTable members={members} />
+      <Paginator />
     </div>
   </div>
 );
