@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './dashboard.module.css';
 import Button from '../../../base/button';
-import DashboardFilter from '../../../partials/dashboard-filter';
+import Dropdown from '../../../partials/dropdown';
 
-const Dashboard = ({ totalMembers, filters }) => (
+const Dashboard = ({ totalMembers }) => (
   <div className={styles.dashboard}>
     <div className={styles.inner}>
       <div className={styles.group}>
@@ -17,7 +17,7 @@ const Dashboard = ({ totalMembers, filters }) => (
         </div>
       </div>
       <div className={styles.filters}>
-        <DashboardFilter filters={filters} />
+        <Dropdown />
       </div>
     </div>
   </div>

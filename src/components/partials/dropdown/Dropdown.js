@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import DashboardFilterForm from './form';
-import styles from './dashboard-filter.module.css';
+import styles from './dropdown.module.css';
 
-const DashboardFilter = () => {
+const Dropdown = () => {
   const [status] = useState(true);
 
   function renderForm() {
@@ -27,4 +27,4 @@ const DashboardFilter = () => {
   );
 };
 
-export default DashboardFilter;
+export default Dropdown;
