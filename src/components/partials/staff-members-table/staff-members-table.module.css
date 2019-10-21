@@ -1,0 +1,83 @@
+.table {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  background-color: #fff;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+  color: #4c4c4c;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-feature-settings: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.5;
+  text-align: left;
+  text-indent: 0;
+  text-transform: none;
+  white-space: normal;
+  word-spacing: normal;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+  background-color: #FFF;
+  border-bottom: 1px solid #eee;
+}
+
+.cell {
+  position: relative;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 90px;
+  padding: 15px;
+  width: 14%;
+}
+
+.cellheader {
+  position: relative;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: 90px;
+  padding: 15px;
+  min-height: 60px;
+  font-size: 14px;
+  text-transform: uppercase;
+  width: 14%;
+}
+
+.info {
+  display: block;
+  width: 100%;
+}
