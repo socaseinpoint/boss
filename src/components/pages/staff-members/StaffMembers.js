@@ -9,21 +9,24 @@ const StaffMembers = () => {
     loading: false,
     errors: null,
     filters: {
-      name: null,
-      email: null,
-      status: null,
-      venue: null,
-      staffType: null,
+      name: '',
+      email: '',
+      status: '',
+      venue: '',
+      staffType: '',
     },
-    perPage: 4,
-    currentPage: 0,
-    data: initialStaffMembers,
+    pagination: {
+      current: 10,
+      perPage: 4,
+      total: 120,
+    },
+    results: initialStaffMembers,
   });
 
   return (
     <DefaultLayout>
-      <Dashboard />
-      <Content members={members.data} />
+      <Dashboard filters={members.filters} />
+      <Content members={members} />
     </DefaultLayout>
   );
 };
