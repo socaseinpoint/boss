@@ -21,14 +21,10 @@ function renderHeading(cols) {
   );
 }
 
-function renderMembers(members) {
-  return members.map((member) => <StaffMember { ...member } />);
-}
-
 const StaffTable = ({ members }) => (
   <div className="boss-table boss-table_page_staff-members-index">
     {renderHeading(headings)}
-    {renderMembers(members)}
+    {members.map((member) => <StaffMember key={member.id} { ...member } />)}
   </div>
 );
 

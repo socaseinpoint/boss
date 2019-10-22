@@ -13,6 +13,10 @@ const Content = () => {
     useDispatch(setPage(number));
   }
 
+  function handleAction(number) {
+    console.log(number);
+  }
+
   return (
     <div className="boss-page-main__content">
       <div className="boss-page-main__inner">
@@ -22,6 +26,7 @@ const Content = () => {
           total={pagination.total}
           perPage={pagination.perPage}
           useAction={useAction}
+          handleAction={handleAction}
         />
       </div>
     </div>
