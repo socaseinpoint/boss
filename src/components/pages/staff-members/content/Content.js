@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getStaffMembersResults, getStaffMembersPagination } from '../../../../selectors/staffMembers';
 import { setPage } from '../../../../actions/staffMembers';
-import StaffMembersTable from '../../../partials/staff-members-table';
+import StaffMembersTable from '../../../partials/staff/table';
 import Pagination from '../../../partials/pagination';
 
 const Content = () => {

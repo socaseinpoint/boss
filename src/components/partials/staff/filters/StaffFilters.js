@@ -13,7 +13,7 @@ function onSubmit(e) {
   console.log('submit', e);
 }
 
-const DashboardFilterForm = () => (
+const StaffFilters = () => (
   <Form
     onSubmit={onSubmit}
     render={({ handleSubmit }) => (
@@ -65,4 +65,4 @@ const DashboardFilterForm = () => (
   />
 );
 
-export default DashboardFilterForm;
+export default StaffFilters;

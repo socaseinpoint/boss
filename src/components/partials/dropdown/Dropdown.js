@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
-import DashboardFilterForm from './form';
+import PropTypes from 'prop-types';
 
-const Dropdown = () => {
+const Dropdown = ({ trigger, content }) => {
   const [status] = useState(true);
-
-  function renderForm() {
-    return (
-      status ? (
-        <DashboardFilterForm />
-      ) : (
-        <div>No form</div>
-      )
-    );
-  };
 
   return (
     <div className="boss-dropdown">
       <div className="boss-dropdown__header">
-        <button type="button" className="boss-dropdown__switch boss-dropdown__switch_role_filter">Filter</button>
+        {trigger}
       </div>
       <div className="boss-dropdown__content boss-dropdown__content_state_opened">
         <div className="boss-dropdown__content-inner">
-          {renderForm()}
+          {
+            status ? (
+              content
+            ) : null
+          }
         </div>
       </div>
     </div>
   );
+};
+
+Dropdown.propTypes = {
+  trigger: PropTypes.node.isRequired,
+  content: PropTypes.node.isRequired,
 };
 
 export default Dropdown;

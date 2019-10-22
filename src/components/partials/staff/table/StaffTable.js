@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StaffMember from '../staff-member';
+import StaffMember from '../member';
 
 const headings = [
   '',
@@ -25,14 +25,14 @@ function renderMembers(members) {
   return members.map((member) => <StaffMember { ...member } />);
 }
 
-const StaffMembersTable = ({ members }) => (
+const StaffTable = ({ members }) => (
   <div className="boss-table boss-table_page_staff-members-index">
     {renderHeading(headings)}
     {renderMembers(members)}
   </div>
 );
 
-StaffMembersTable.propTypes = {
+StaffTable.propTypes = {
   members: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -56,8 +56,8 @@ StaffMembersTable.propTypes = {
   ),
 };
 
-StaffMembersTable.defaultProps = {
+StaffTable.defaultProps = {
   members: [],
 };
 
-export default StaffMembersTable;
+export default StaffTable;

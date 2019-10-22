@@ -1,7 +1,7 @@
 export const initialStaffMembers = [
   {
     id: '1',
-    image: 'none',
+    image: 'http://boss-styles.herokuapp.com/images/avatars/download.jpeg',
     name: 'John Doe',
     modified: '18:00 Wed 11/16/2016',
     status: true,
@@ -20,7 +20,7 @@ export const initialStaffMembers = [
   },
   {
     id: '1',
-    image: 'none',
+    image: 'http://boss-styles.herokuapp.com/images/avatars/download.jpeg',
     name: 'John Doe',
     modified: '18:00 Wed 11/16/2016',
     status: true,
@@ -39,7 +39,7 @@ export const initialStaffMembers = [
   },
   {
     id: '1',
-    image: 'none',
+    image: 'http://boss-styles.herokuapp.com/images/avatars/download.jpeg',
     name: 'John Doe',
     modified: '18:00 Wed 11/16/2016',
     status: true,
@@ -58,7 +58,7 @@ export const initialStaffMembers = [
   },
   {
     id: '1',
-    image: 'none',
+    image: 'http://boss-styles.herokuapp.com/images/avatars/download.jpeg',
     name: 'John Doe',
     modified: '18:00 Wed 11/16/2016',
     status: true,
