@@ -25,7 +25,7 @@ const StaffMember = ({
   <div className="boss-table__row" key={id}>
     <div className="boss-table__cell">
       <a href={`/users/${id}`}>
-        <div className="boss-avatar_type_combined">
+        <div className="boss-avatar boss-avatar_type_combined">
           <img className="boss-avatar__image" src={image} alt={name} />
         </div>
       </a>

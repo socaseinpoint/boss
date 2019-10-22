@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const Dropdown = ({ trigger, content }) => {
-  const [status] = useState(true);
+  const [show, setShow] = useState(true);
 
   return (
     <div className="boss-dropdown">
-      <div className="boss-dropdown__header">
+      <div role="presentation" className="boss-dropdown__header" onClick={() => setShow(!show)}>
         {trigger}
       </div>
-      <div className="boss-dropdown__content boss-dropdown__content_state_opened">
-        <div className="boss-dropdown__content-inner">
-          {
-            status ? (
-              content
-            ) : null
-          }
-        </div>
-      </div>
+      {
+        show ? (
+          <div className="boss-dropdown__content boss-dropdown__content_state_opened">
+            <div className="boss-dropdown__content-inner">
+              {content}
+            </div>
+          </div>
+        ) : null
+      }
     </div>
   );
 };
