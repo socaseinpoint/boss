@@ -39,12 +39,12 @@ const DashboardFilterForm = () => (
             <InputGroup>
               <div className="boss-form__label-group">
                 <Label>Venue</Label>
-                <label className="boss-form__checkbox-label boss-form__checkbox-label_context_label-group">
+                <span className="boss-form__checkbox-label boss-form__checkbox-label_context_label-group">
                   <Field name="mastervenue" component={CheckboxInput} type="checkbox" />
                   <span className="boss-form__checkbox-label-text">
                     Master venue only
                   </span>
-                </label>
+                </span>
               </div>
               <Field name="vanue" component={Input} placeholder="First Name" />
             </InputGroup>
@@ -62,6 +62,6 @@ const DashboardFilterForm = () => (
       </form>
     )}
   />
-)
+);
 
 export default DashboardFilterForm;

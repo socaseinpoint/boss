@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { getStaffMembersTotal } from '../../../../selectors/staffMembers';
-import Button from '../../../base/button';
 import Dropdown from '../../../partials/dropdown';
 
 const Dashboard = () => {
@@ -19,7 +18,7 @@ const Dashboard = () => {
           </span>
         </h1>
         <div className="boss-page-dashboard__buttons-group">
-          <a href="#" className="boss-button boss-button_role_add boss-page-dashboard__button">
+          <a href="/add" className="boss-button boss-button_role_add boss-page-dashboard__button">
             Add Staff Members
           </a>
         </div>
