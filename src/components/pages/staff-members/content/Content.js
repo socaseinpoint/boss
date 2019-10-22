@@ -4,8 +4,9 @@ import { getStaffMembersResults, getStaffMembersPagination } from '../../../../s
 import { setPage } from '../../../../actions/staffMembers';
 import StaffMembersTable from '../../../partials/staff/table';
 import Pagination from '../../../partials/pagination';
+import Content from '../../../partials/content';
 
-const Content = () => {
+const StaffMembersContent = () => {
   const members = useSelector((state) => getStaffMembersResults(state));
   const pagination = useSelector((state) => getStaffMembersPagination(state));
 
@@ -18,19 +19,17 @@ const Content = () => {
   }
 
   return (
-    <div className="boss-page-main__content">
-      <div className="boss-page-main__inner">
-        <StaffMembersTable members={members} />
-        <Pagination
-          current={pagination.current}
-          total={pagination.total}
-          perPage={pagination.perPage}
-          useAction={useAction}
-          handleAction={handleAction}
-        />
-      </div>
-    </div>
+    <Content>
+      <StaffMembersTable members={members} />
+      <Pagination
+        current={pagination.current}
+        total={pagination.total}
+        perPage={pagination.perPage}
+        useAction={useAction}
+        handleAction={handleAction}
+      />
+    </Content>
   );
 };
 
-export default Content;
+export default StaffMembersContent;

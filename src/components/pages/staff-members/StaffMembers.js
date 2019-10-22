@@ -1,12 +1,12 @@
 import React from 'react';
 import DefaultLayout from '../../layouts/default';
-import Dashboard from './dashboard';
-import Content from './content';
+import StaffMembersDashboard from './dashboard';
+import StaffMembersContent from './content';
 
 const StaffMembers = () => (
   <DefaultLayout>
-    <Dashboard />
-    <Content />
+    <StaffMembersDashboard />
+    <StaffMembersContent />
   </DefaultLayout>
 );
 

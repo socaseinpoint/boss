@@ -1,3 +1,3 @@
-import Dashboard from './Dashboard';
+import StaffMembersDashboard from './Dashboard';
 
-export default Dashboard;
+export default StaffMembersDashboard;

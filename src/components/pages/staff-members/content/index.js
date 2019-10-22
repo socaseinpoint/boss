@@ -1,3 +1,3 @@
-import Content from './Content';
+import StaffMembersContent from './Content';
 
-export default Content;
+export default StaffMembersContent;
