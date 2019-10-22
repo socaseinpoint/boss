@@ -5,6 +5,7 @@ import {
   Label,
   InputGroup,
   CheckboxInput,
+  SelectInput,
 } from '../../../base/form';
 import Button from '../../../base/button';
 
@@ -51,7 +52,7 @@ const DashboardFilterForm = () => (
 
             <InputGroup>
               <Label>Staff Type</Label>
-              <Field name="stafftype" component={Input} placeholder="First Name" />
+              <SelectInput name="stafftype" />
             </InputGroup>
 
             <div className="boss-form__field boss-form__field_justify_end boss-form__field_no-label">
