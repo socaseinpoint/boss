@@ -1,8 +1,12 @@
 import React from 'react';
 import { Form, Field } from 'react-final-form';
-import { Input, Label, InputGroup } from '../../../base/form';
+import {
+  Input,
+  Label,
+  InputGroup,
+  CheckboxInput,
+} from '../../../base/form';
 import Button from '../../../base/button';
-import styles from './dashboard-filter-form.module.css';
 
 function onSubmit(e) {
   console.log('submit', e);
@@ -13,8 +17,8 @@ const DashboardFilterForm = () => (
     onSubmit={onSubmit}
     render={({ handleSubmit }) => (
       <form onSubmit={handleSubmit}>
-        <div className={styles.row}>
-          <div className={styles.col}>
+        <div className="boss-form__row boss-form__row_position_last">
+          <div className="boss-form__group boss-form__group_layout_half">
             <InputGroup>
               <Label>Name</Label>
               <Field name="name" component={Input} placeholder="First Name" />
@@ -31,9 +35,17 @@ const DashboardFilterForm = () => (
             </InputGroup>
           </div>
 
-          <div className={styles.collast}>
+          <div className="boss-form__group boss-form__group_layout_half">
             <InputGroup>
-              <Label>Venue</Label>
+              <div className="boss-form__label-group">
+                <Label>Venue</Label>
+                <label className="boss-form__checkbox-label boss-form__checkbox-label_context_label-group">
+                  <Field name="mastervenue" component={CheckboxInput} type="checkbox" />
+                  <span className="boss-form__checkbox-label-text">
+                    Master venue only
+                  </span>
+                </label>
+              </div>
               <Field name="vanue" component={Input} placeholder="First Name" />
             </InputGroup>
 
@@ -42,9 +54,9 @@ const DashboardFilterForm = () => (
               <Field name="stafftype" component={Input} placeholder="First Name" />
             </InputGroup>
 
-            <InputGroup>
+            <div className="boss-form__field boss-form__field_justify_end boss-form__field_no-label">
               <Button type="submit" value="Update" />
-            </InputGroup>
+            </div>
           </div>
         </div>
       </form>

@@ -1,6 +1,10 @@
 import React from 'react';
-import styles from './label.module.css';
+import PropTypes from 'prop-types';
 
-const Label = ({children}) => <div className={styles.label}>{children}</div>;
+const Label = ({ children }) => <span className="boss-form__label-text">{children}</span>;
+
+Label.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Label;

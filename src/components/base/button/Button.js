@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './button.module.css';
 
-const Button = ({ value, type }) => <input type={type} className={styles.button} value={value} />;
+const Button = ({ value, type }) => <input type={type} className="boss-button boss-button_role_add boss-page-dashboard__button" value={value} />;
 
 Button.propTypes = {
   value: PropTypes.string.isRequired,
