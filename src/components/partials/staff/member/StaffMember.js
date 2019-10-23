@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Accessories from '../../accessories';
 import StaffMemberCell from './cell';
 
@@ -21,26 +22,41 @@ const StaffMember = ({
   type,
   masterVenue,
   workVenues,
-}) => (
-  <div className="boss-table__row" key={id}>
-    <div className="boss-table__cell">
-      <a href={`/users/${id}`}>
-        <div className="boss-avatar boss-avatar_type_combined">
-          <img className="boss-avatar__image" src={image} alt={name} />
-        </div>
-      </a>
+  scannable,
+  retakePicture,
+}) => {
+  const imageClassList = classNames(
+    'boss-avatar',
+    'boss-avatar_type_combined',
+    { 'boss-avatar_type_scannable': scannable },
+  );
+
+  return (
+    <div className="boss-table__row" key={id}>
+      <div className="boss-table__cell">
+        <a href={`/users/${id}`}>
+          <div className={imageClassList}>
+            <img className="boss-avatar__image" src={image} alt={name} />
+            { retakePicture ? (
+              <div className="boss-avatar__overlay">
+                <p className="boss-avatar__overlay-text boss-avatar__overlay-text_role_retake">Please retake picture</p>
+              </div>
+            ) : null }
+          </div>
+        </a>
+      </div>
+      <StaffMemberCell label="Name">{name}</StaffMemberCell>
+      <StaffMemberCell label="Accessories">
+        <Accessories accessories={accessories} />
+      </StaffMemberCell>
+      <StaffMemberCell label="Modified">{modified}</StaffMemberCell>
+      <StaffMemberCell label="Status">{renderStatus(status)}</StaffMemberCell>
+      <StaffMemberCell label="Type">{type}</StaffMemberCell>
+      <StaffMemberCell label="Master Venue">{masterVenue}</StaffMemberCell>
+      <StaffMemberCell label="Work Venues">{workVenues}</StaffMemberCell>
     </div>
-    <StaffMemberCell>{name}</StaffMemberCell>
-    <StaffMemberCell>
-      <Accessories accessories={accessories} />
-    </StaffMemberCell>
-    <StaffMemberCell>{modified}</StaffMemberCell>
-    <StaffMemberCell>{renderStatus(status)}</StaffMemberCell>
-    <StaffMemberCell>{type}</StaffMemberCell>
-    <StaffMemberCell>{masterVenue}</StaffMemberCell>
-    <StaffMemberCell>{workVenues}</StaffMemberCell>
-  </div>
-);
+  );
+};
 
 StaffMember.propTypes = {
   id: PropTypes.string.isRequired,
@@ -61,6 +77,8 @@ StaffMember.propTypes = {
   type: PropTypes.string.isRequired,
   masterVenue: PropTypes.string.isRequired,
   workVenues: PropTypes.string.isRequired,
+  scannable: PropTypes.bool.isRequired,
+  retakePicture: PropTypes.bool.isRequired,
 };
 
 export default StaffMember;

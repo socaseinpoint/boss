@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import Dashboard from '../../../partials/dashboard';
 import StaffFilters from '../../../partials/staff/filters';
@@ -28,7 +29,15 @@ const StaffMembersDashboard = () => {
         </div>
         <div className="boss-page-dashboard__filter">
           <Dropdown
-            trigger={<button type="button" className="boss-dropdown__switch boss-dropdown__switch_role_filter">Filter</button>}
+            trigger={(show, setShow) => {
+              const triggerClassList = classNames(
+                'boss-dropdown__switch',
+                'boss-dropdown__switch_role_filter',
+                { 'boss-dropdown__switch_state_opened': show },
+              );
+
+              return <button type="button" className={triggerClassList} onClick={() => setShow(!show)}>Filter</button>;
+            }}
             content={<StaffFilters />}
           />
         </div>

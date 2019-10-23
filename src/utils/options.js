@@ -1,5 +1,9 @@
 export const statusOptions = [
   {
+    label: 'Any',
+    value: '0',
+  },
+  {
     label: 'Option 1',
     value: '1',
   },
@@ -15,6 +19,10 @@ export const statusOptions = [
 
 export const venueOptions = [
   {
+    label: 'Any',
+    value: '0',
+  },
+  {
     label: 'Option 1',
     value: '1',
   },
@@ -29,6 +37,10 @@ export const venueOptions = [
 ];
 
 export const staffTypeOptions = [
+  {
+    label: 'Any',
+    value: '0',
+  },
   {
     label: 'Option 1',
     value: '1',

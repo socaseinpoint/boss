@@ -12,8 +12,8 @@ const AccessoriesItem = ({
 
   return (
     <span className="boss-indicator boss-indicator_adjust_tooltip boss-indicator_adjust_flow">
-      <span className={iconClassList} style={{ color: `#${color}` }} />
-      <span className="boss-indicator__counter">{quantity}</span>
+      <span className={iconClassList} style={{ color }} />
+      { quantity && quantity !== 0 ? <span className="boss-indicator__counter">{quantity}</span> : null }
       <span className="boss-indicator__tooltip">
         <span className="boss-indicator__tooltip-line">
           <span className="boss-indicator__tooltip-marked">{title}</span>
@@ -21,7 +21,7 @@ const AccessoriesItem = ({
         <span className="boss-indicator__tooltip-line">{name}</span>
       </span>
     </span>
-  )
+  );
 };
 
 AccessoriesItem.propTypes = {

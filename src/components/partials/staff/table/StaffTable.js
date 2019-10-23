@@ -48,6 +48,8 @@ StaffTable.propTypes = {
       type: PropTypes.string.isRequired,
       masterVenue: PropTypes.string.isRequired,
       workVenues: PropTypes.string.isRequired,
+      scannable: PropTypes.bool.isRequired,
+      retakePicture: PropTypes.bool.isRequired,
     }),
   ),
 };

@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const Dropdown = ({ trigger, content }) => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   return (
     <div className="boss-dropdown">
-      <div role="presentation" className="boss-dropdown__header" onClick={() => setShow(!show)}>
-        {trigger}
+      <div role="presentation" className="boss-dropdown__header">
+        {trigger(show, setShow)}
       </div>
       {
         show ? (
@@ -23,7 +23,7 @@ const Dropdown = ({ trigger, content }) => {
 };
 
 Dropdown.propTypes = {
-  trigger: PropTypes.node.isRequired,
+  trigger: PropTypes.func.isRequired,
   content: PropTypes.node.isRequired,
 };
 
