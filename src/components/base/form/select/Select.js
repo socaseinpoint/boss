@@ -27,22 +27,37 @@ const customStyles = {
   }),
 };
 
-const SelectInput = ({ input, options }) => {
-  return (
-    <Field
-      name={input.name}
-      parse={(val) => val && val.value}
-      render={() => (
-        <Select
-          onChange={(value) => input.onChange(value)}
-          isSearchable="false"
-          styles={customStyles}
-          options={options}
-          placeholder="Any"
-        />
-      )}
-    />
-  );
+const SelectInput = ({
+  input: {
+    name,
+    onChange,
+  },
+  options,
+}) => (
+  <Field
+    name={name}
+    render={() => (
+      <Select
+        onChange={(newValue) => onChange(newValue)}
+        isSearchable="false"
+        styles={customStyles}
+        options={options}
+      />
+    )}
+  />
+);
+
+SelectInput.propTypes = {
+  input: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+  }).isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 export default SelectInput;

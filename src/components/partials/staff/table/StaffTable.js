@@ -24,7 +24,22 @@ function renderHeading(cols) {
 const StaffTable = ({ members }) => (
   <div className="boss-table boss-table_page_staff-members-index">
     {renderHeading(headings)}
-    {members.map((member) => <StaffMember key={member.id} { ...member } />)}
+    {members.map((member) => (
+      <StaffMember
+        key={member.id}
+        id={member.id}
+        image={member.image}
+        name={member.name}
+        accessories={member.accessories}
+        modified={member.modified}
+        status={member.status}
+        type={member.type}
+        masterVenue={member.masterVenue}
+        workVenues={member.workVenues}
+        scannable={member.scannable}
+        retakePicture={member.retakePicture}
+      />
+    ))}
   </div>
 );
 

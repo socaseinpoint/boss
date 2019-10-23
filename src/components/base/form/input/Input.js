@@ -2,15 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Input = ({
-  id,
-  label,
-  type,
-  input,
-  meta: { active, error, touched }
+  input: {
+    name,
+    value,
+    type,
+    onBlur,
+    onChange,
+  },
 }) => (
-  <div className={active ? "active" : ""}>
-    <input id={id} {...input} type={type} placeholder={label} className="boss-form__input" />
-  </div>
+  <input
+    name={name}
+    value={value}
+    type={type}
+    onBlur={onBlur}
+    onChange={onChange}
+    className="boss-form__input"
+  />
 );
+
+Input.propTypes = {
+  input: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    onBlur: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default Input;

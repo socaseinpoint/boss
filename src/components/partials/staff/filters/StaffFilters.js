@@ -47,7 +47,15 @@ const StaffFilters = () => (
             <InputGroup>
               <div className="boss-form__label-group">
                 <Label>Venue</Label>
-                <Field type="checkbox" name="masteronly" id="masteronly" component={CheckboxInput} options={statusOptions} label="Master Venue Only" />
+                <Field
+                  type="checkbox"
+                  name="masteronly"
+                  id="masteronly"
+                  value="true"
+                  component={CheckboxInput}
+                  options={statusOptions}
+                  label="Master Venue Only"
+                />
               </div>
               <Field name="venue" component={SelectInput} options={venueOptions} />
             </InputGroup>
