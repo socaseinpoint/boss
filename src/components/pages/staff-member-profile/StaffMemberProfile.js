@@ -18,7 +18,7 @@ const StaffMemberProfile = () => {
       <StaffMemberProfileDashboard />
       <Content>
         <Switch>
-          <Route exact path={path}>
+          <Route exact path={`${path}/profile`}>
             <Profile />
           </Route>
           <Route exact path={`${path}/holidays`}>
