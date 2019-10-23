@@ -1,54 +1,34 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const ProfileDescriptionDetails = () => (
+const ProfileDescriptionDetails = ({ details }) => (
   <section className="boss-details">
-    <p className="boss-details__pointer"><span className="boss-details__pointer-text">1</span></p>
+    <p className="boss-details__pointer"><span className="boss-details__pointer-text">{details.id}</span></p>
     <div className="boss-details__content">
-      <h3 className="boss-details__title">Employment Details</h3>
+      <h3 className="boss-details__title">{details.label}</h3>
       <ul className="boss-details__list">
-        <li className="boss-details__item">
-          <p className="boss-details__label">Main Venue</p>
-          <p className="boss-details__value">McCoolay’s</p>
-        </li>
-        <li className="boss-details__item">
-          <p className="boss-details__label">Other Venues</p>
-          <p className="boss-details__value">N / A</p>
-        </li>
-        <li className="boss-details__item">
-          <p className="boss-details__label">Job Type</p>
-          <p className="boss-details__value">Floor Staff</p>
-        </li>
-        <li className="boss-details__item">
-          <p className="boss-details__label">Start Date</p>
-          <p className="boss-details__value">Tue 11/15/2016</p>
-        </li>
-        <li className="boss-details__item">
-          <p className="boss-details__label">Pay Rate</p>
-          <p className="boss-details__value">Age 18-20</p>
-        </li>
-        <li className="boss-details__item">
-          <p className="boss-details__label">Hour Preference</p>
-          <p className="boss-details__value">20 - 25</p>
-        </li>
-        <li className="boss-details__item">
-          <p className="boss-details__label">Day Preference</p>
-          <p className="boss-details__value">Thursday / Saturday / Sunday</p>
-        </li>
-        <li className="boss-details__item">
-          <p className="boss-details__label">National Insurance Number</p>
-          <p className="boss-details__value">PE630024B</p>
-        </li>
-        <li className="boss-details__item">
-          <p className="boss-details__label">Sage ID</p>
-          <p className="boss-details__value">260</p>
-        </li>
-        <li className="boss-details__item">
-          <p className="boss-details__label">Status Statement</p>
-          <p className="boss-details__value">A</p>
-        </li>
+        { details.fields.map((field) => (
+          <li className="boss-details__item">
+            <p className="boss-details__label">{field.label}</p>
+            <p className="boss-details__value">{field.value}</p>
+          </li>
+        ))}
       </ul>
     </div>
   </section>
 );
+
+ProfileDescriptionDetails.propTypes = {
+  details: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    label: PropTypes.string.isRequired,
+    fields: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired,
+      }).isRequired,
+    ).isRequired,
+  }).isRequired,
+};
 
 export default ProfileDescriptionDetails;
