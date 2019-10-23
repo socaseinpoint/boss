@@ -1,4 +1,4 @@
-export const initialStaffMembers = [
+const initialStaffMembers = [
   {
     id: '1',
     image: 'http://boss-styles.herokuapp.com/images/avatars/download.jpeg',

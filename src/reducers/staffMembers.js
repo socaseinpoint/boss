@@ -1,4 +1,4 @@
-import { initialStaffMembers } from '../utils/initialState';
+import staffMembers from '../utils/mockStaffMembers';
 
 const initialState = {
   loading: false,
@@ -15,7 +15,7 @@ const initialState = {
     perPage: 4,
     total: 120,
   },
-  results: initialStaffMembers,
+  results: staffMembers,
   total: 695,
 };
 

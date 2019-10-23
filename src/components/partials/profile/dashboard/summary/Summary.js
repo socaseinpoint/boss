@@ -1,5 +1,5 @@
 import React from 'react';
-import Accessories from '../../accessories';
+import Accessories from '../../../accessories';
 import ProfileDashboardAvatar from '../avatar';
 
 const accessories = [
