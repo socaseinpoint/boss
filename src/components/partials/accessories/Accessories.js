@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AccessoriesItem from './item';
 
 const Accessories = ({ accessories }) => (
-  <div>
+  <>
     { accessories && accessories.map((accessory) => (
       <AccessoriesItem
         key={accessory.id}
@@ -14,7 +14,7 @@ const Accessories = ({ accessories }) => (
         color={accessory.color}
       />
     )) }
-  </div>
+  </>
 );
 
 Accessories.propTypes = {

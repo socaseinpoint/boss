@@ -19,7 +19,7 @@ const StaffMemberProfile = () => {
   const { id } = useParams();
   useEffect(() => {
     dispatch(staffMemberProfileAsync(id));
-  }, []);
+  }, [id, dispatch]);
 
   return (
     <DefaultLayout>

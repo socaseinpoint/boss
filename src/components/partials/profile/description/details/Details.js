@@ -33,11 +33,7 @@ ProfileDescriptionDetails.propTypes = {
     id: PropTypes.number.isRequired,
     label: PropTypes.string.isRequired,
     fields: PropTypes.arrayOf(
-      PropTypes.shape({
-        label: PropTypes.string.isRequired,
-        value: PropTypes,
-        href: PropTypes.string,
-      }).isRequired,
+      PropTypes.any.isRequired,
     ).isRequired,
   }).isRequired,
 };
