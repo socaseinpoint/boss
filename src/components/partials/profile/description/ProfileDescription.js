@@ -3,8 +3,8 @@ import ProfileDescriptionDetails from './details';
 
 const ProfileDescription = ({ description }) => (
   <div className="boss-page-main__flow">
-    { description.map((details) => (
-      <div className="boss-page-main__isle">
+    { description.data.map((details) => (
+      <div className="boss-page-main__isle" key={details.id}>
         <ProfileDescriptionDetails details={details} />
       </div>
     )) }

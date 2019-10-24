@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 import Dashboard from '../../../partials/dashboard';
 import StaffFilters from '../../../partials/staff/filters';
-import { getStaffMembersTotal } from '../../../../selectors/staffMembers';
+import { getStaffMembersTotal } from '../../../../selectors/staff-members';
 import Dropdown from '../../../partials/dropdown';
 
 const StaffMembersDashboard = () => {

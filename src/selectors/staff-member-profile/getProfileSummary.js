@@ -1,8 +1,3 @@
-export const getStaffMembersResults = (state) => state.staffMembers.results;
-export const getStaffMembersPagination = (state) => state.staffMembers.pagination;
-export const getStaffMembersTotal = (state) => state.staffMembers.total;
-export const getStaffMembersFilters = (state) => state.staffMembers.filters;
-
 export const getProfileSummary = (state) => {
   const { staffMemberProfile } = state;
   const { staffMember } = staffMemberProfile;
@@ -24,4 +19,4 @@ export const getProfileSummary = (state) => {
   };
 };
 
-export const getProfileDescription = (state) => state;
+export default getProfileSummary;

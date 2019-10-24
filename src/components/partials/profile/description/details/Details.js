@@ -8,9 +8,19 @@ const ProfileDescriptionDetails = ({ details }) => (
       <h3 className="boss-details__title">{details.label}</h3>
       <ul className="boss-details__list">
         { details.fields.map((field) => (
-          <li className="boss-details__item">
+          <li className="boss-details__item" key={field.label}>
             <p className="boss-details__label">{field.label}</p>
-            <p className="boss-details__value">{field.value}</p>
+            <p className="boss-details__value">
+              {
+                field.href ? (
+                  <a href={field.href}>
+                    {field.value ? field.value : 'N/A'}
+                  </a>
+                ) : (
+                  <span>{field.value ? field.value : 'N/A'}</span>
+                )
+              }
+            </p>
           </li>
         ))}
       </ul>
@@ -25,7 +35,8 @@ ProfileDescriptionDetails.propTypes = {
     fields: PropTypes.arrayOf(
       PropTypes.shape({
         label: PropTypes.string.isRequired,
-        value: PropTypes.string.isRequired,
+        value: PropTypes,
+        href: PropTypes.string,
       }).isRequired,
     ).isRequired,
   }).isRequired,
