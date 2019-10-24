@@ -14,7 +14,7 @@ const App = () => (
       <Route exact path="/staff-members">
         <StaffMembers />
       </Route>
-      <Route path="/staff-member-profile">
+      <Route path="/staff-member-profile/:id">
         <StaffMemberProfile />
       </Route>
     </Switch>

@@ -9,7 +9,7 @@ const ProfileDashboard = ({
   email,
   phone,
   venue,
-  staffType
+  staffType,
 }) => (
   <div className="boss-page-dashboard boss-page-dashboard_updated boss-page-dashboard_page_profile">
     <div className="boss-page-dashboard__group">

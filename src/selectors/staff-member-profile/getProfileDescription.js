@@ -1,4 +1,8 @@
 export const getProfileDescription = (state) => {
+  if (!state.staffMemberProfile.staffMember) {
+    return {};
+  }
+
   const profile = state.staffMemberProfile;
   const member = profile.staffMember;
   const { payRates } = profile;

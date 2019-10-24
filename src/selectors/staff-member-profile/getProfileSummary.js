@@ -1,4 +1,8 @@
 export const getProfileSummary = (state) => {
+  if (!state.staffMemberProfile.staffMember) {
+    return {};
+  }
+
   const { staffMemberProfile } = state;
   const { staffMember } = staffMemberProfile;
 

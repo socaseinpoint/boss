@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Switch,
   Route,
   useRouteMatch,
+  useParams,
 } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { staffMemberProfileAsync } from '../../../actions/staffMemberProfile';
 import StaffMemberProfileDashboard from './dashboard';
 import DefaultLayout from '../../layouts/default';
 import Content from '../../partials/content';
@@ -12,6 +15,11 @@ import Holidays from './holidays';
 
 const StaffMemberProfile = () => {
   const { path } = useRouteMatch();
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  useEffect(() => {
+    dispatch(staffMemberProfileAsync(id));
+  }, []);
 
   return (
     <DefaultLayout>
