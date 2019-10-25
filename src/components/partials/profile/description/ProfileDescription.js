@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ProfileDescriptionDetails from './details';
 
 const ProfileDescription = ({ description }) => (
@@ -10,5 +11,11 @@ const ProfileDescription = ({ description }) => (
     )) }
   </div>
 );
+
+ProfileDescription.propTypes = {
+  description: PropTypes.arrayOf(
+    PropTypes.any.isRequired,
+  ).isRequired,
+};
 
 export default ProfileDescription;

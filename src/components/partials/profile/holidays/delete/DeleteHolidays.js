@@ -20,7 +20,7 @@ const DeleteHolidays = ({ id }) => {
     <>
       <button type="button" onClick={toggleModal} className="boss-button boss-button_type_small boss-button_role_cancel boss-table__action">Delete</button>
       <ReactModal isOpen={isOpen} className={modalClassList} ariaHideApp={false}>
-        <Modal header="Warning !!!" onClose={toggleModal}>
+        <Modal header="Warning !!!" onClose={toggleModal} type="delete">
           <div className="boss-modal-window__message-block">
             <span className="boss-modal-window__message-text">Are You Sure?</span>
           </div>

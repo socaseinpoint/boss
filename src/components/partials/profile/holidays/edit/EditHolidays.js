@@ -7,7 +7,15 @@ function onSubmit(e) {
 
 const EditHolidays = () => (
   <HolidaysEditor
-    trigger={(triggerModal) => (<button onClick={triggerModal} type="button" className="boss-button boss-button_type_small boss-button_role_update boss-table__action">Edit</button>)}
+    trigger={(triggerModal) => (
+      <button
+        onClick={triggerModal}
+        type="button"
+        className="boss-button boss-button_type_small boss-button_role_update boss-table__action"
+      >
+        Edit
+      </button>
+    )}
     onSubmit={onSubmit}
     title="Edit Holiday"
   />

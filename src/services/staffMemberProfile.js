@@ -1,4 +1,4 @@
-import SERVER_BASE_URL from '../constants/config';
+import { SERVER_BASE_URL } from '../constants/config';
 
 export const fetchStaffMember = (id) => {
   return fetch(`${SERVER_BASE_URL}staff_members/${id}`, {

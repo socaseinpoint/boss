@@ -31,4 +31,3 @@ Textarea.propTypes = {
 };
 
 export default Textarea;
-
