@@ -54,3 +54,14 @@ export const staffTypeOptions = [
     value: '3',
   },
 ];
+
+export const holidayTypeOptions = [
+  {
+    label: 'Paid Holiday',
+    value: '0',
+  },
+  {
+    label: 'Unpaid Holiday',
+    value: '1',
+  },
+];

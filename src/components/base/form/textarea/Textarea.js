@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = ({
+const Textarea = ({
   input: {
     name,
     value,
@@ -10,17 +10,17 @@ const Input = ({
     onChange,
   },
 }) => (
-  <input
+  <textarea
     name={name}
     value={value}
     type={type}
     onBlur={onBlur}
     onChange={onChange}
-    className="boss-form__input"
+    className="boss-form__textarea"
   />
 );
 
-Input.propTypes = {
+Textarea.propTypes = {
   input: PropTypes.shape({
     name: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
@@ -30,5 +30,5 @@ Input.propTypes = {
   }).isRequired,
 };
 
-export default Input;
+export default Textarea;
 

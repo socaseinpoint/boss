@@ -4,12 +4,18 @@ import ProfileHolidaysTable from './table';
 import ProfileBoard from '../board';
 import ProfileManager from '../board/manager';
 import ProfileFilter from '../board/filter';
+import AddHoliday from './add';
 
 const ProfileHolidays = ({ holidays }) => (
   <ProfileBoard
-    header={
-      <div>Title</div>
-    }
+    header={(
+      <>
+        <h2 className="boss-board__title">Holidays and holiday requests</h2>
+        <div className="boss-board__button-group">
+          <AddHoliday />
+        </div>
+      </>
+    )}
   >
     <ProfileManager>
       <div className="boss-board__manager-stats boss-board__manager-stats_layout_row">
