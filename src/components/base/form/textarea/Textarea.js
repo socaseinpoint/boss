@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import FormError from '../error';
 
 const Textarea = ({
   input: {
@@ -9,16 +11,23 @@ const Textarea = ({
     onBlur,
     onChange,
   },
-}) => (
-  <textarea
-    name={name}
-    value={value}
-    type={type}
-    onBlur={onBlur}
-    onChange={onChange}
-    className="boss-form__textarea"
-  />
-);
+  meta,
+}) => {
+  const classList = classNames('boss-form__textarea', { 'boss-form__textarea_state_error': meta.error && meta.touched });
+  return (
+    <>
+      <textarea
+        name={name}
+        value={value}
+        type={type}
+        onBlur={onBlur}
+        onChange={onChange}
+        className={classList}
+      />
+      {meta.error && meta.touched && <FormError>{meta.error}</FormError>}
+    </>
+  );
+};
 
 Textarea.propTypes = {
   input: PropTypes.shape({
@@ -28,6 +37,17 @@ Textarea.propTypes = {
     onBlur: PropTypes.func.isRequired,
     onChange: PropTypes.func.isRequired,
   }).isRequired,
+  meta: PropTypes.shape({
+    error: PropTypes.string,
+    touched: PropTypes.string,
+  }),
+};
+
+Textarea.defaultProps = {
+  meta: {
+    error: null,
+    touched: null,
+  },
 };
 
 export default Textarea;

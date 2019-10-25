@@ -14,9 +14,7 @@ const Modal = ({
       <div role="presentation" className={closeClassName} onClick={onClose} />
       <div className="boss-modal-window__header">{header}</div>
       <div className="boss-modal-window__content">
-        <div className="boss-modal-window__form">
-          {children}
-        </div>
+        {children}
       </div>
     </>
   );
