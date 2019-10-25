@@ -1,0 +1,51 @@
+.DateInput {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  position: relative;
+  width: auto;
+  border: 1px solid #d8d8d8;
+  border-radius: 2px;
+  background-color: #FFF;
+  min-width: 120px;
+  width: 120px;
+  min-height: 50px;
+  padding: 12px 20px;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.DateInput_input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  padding: 5px 20px;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  height: 50px;
+  border: 0;
+  padding-left: 48px;
+}
+
+.DateInput_input:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  background-size: contain;
+  vertical-align: middle;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4N…YxLjAzNSwxMjkuOTQ1eiIgZmlsbD0iIzgwODA4MCIvPgogICAgPC9nPgo8L2c+Cjwvc3ZnPgo=);
+}
