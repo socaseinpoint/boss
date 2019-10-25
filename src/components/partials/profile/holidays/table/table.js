@@ -4,6 +4,7 @@ import Table from '../../../../base/table';
 import Row from '../../../../base/table/row';
 import Cell from '../../../../base/table/cell';
 import TableInfo from '../../../../base/table/table-info';
+import EditHolidays from '../edit';
 
 const ProfileHolidaysTable = ({ holidays }) => (
   <Table customClassName="boss-table_page_smp-holiday-requests">
@@ -70,7 +71,7 @@ const ProfileHolidaysTable = ({ holidays }) => (
               label="Action"
               actions={(
                 <>
-                  <button type="button" className="boss-button boss-button_type_small boss-button_role_update boss-table__action">Edit</button>
+                  <EditHolidays />
                   <button type="button" className="boss-button boss-button_type_small boss-button_role_cancel boss-table__action">Delete</button>
                 </>
               )}

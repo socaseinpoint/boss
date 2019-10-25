@@ -1,3 +1,3 @@
-import AddHoliday from './AddHoliday';
+import AddHolidays from './AddHolidays';
 
-export default AddHoliday;
+export default AddHolidays;

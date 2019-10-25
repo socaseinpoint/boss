@@ -4,7 +4,7 @@ import ProfileHolidaysTable from './table';
 import ProfileBoard from '../board';
 import ProfileManager from '../board/manager';
 import ProfileFilter from '../board/filter';
-import AddHoliday from './add';
+import AddHolidays from './add';
 
 const ProfileHolidays = ({ holidays }) => (
   <ProfileBoard
@@ -12,7 +12,7 @@ const ProfileHolidays = ({ holidays }) => (
       <>
         <h2 className="boss-board__title">Holidays and holiday requests</h2>
         <div className="boss-board__button-group">
-          <AddHoliday />
+          <AddHolidays />
         </div>
       </>
     )}

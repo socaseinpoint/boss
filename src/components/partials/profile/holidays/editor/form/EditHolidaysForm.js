@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Form, Field } from 'react-final-form';
 import {
   InputGroup,
@@ -10,11 +11,7 @@ import {
 import Textarea from '../../../../../base/form/textarea';
 import { holidayTypeOptions } from '../../../../../../utils/options';
 
-function onSubmit(e) {
-  console.log(e);
-}
-
-const AddHolidayForm = () => (
+const EditHolidaysForm = ({ onSubmit, title, }) => (
   <Form
     onSubmit={onSubmit}
     render={({ handleSubmit }) => (
@@ -38,11 +35,15 @@ const AddHolidayForm = () => (
           <Field type="text" name="note" component={Textarea} />
         </InputGroup>
         <InputGroup>
-          <button className="boss-button boss-button_role_add boss-form__submit" type="submit">Add Holiday</button>
+          <button className="boss-button boss-button_role_add boss-form__submit" type="submit">{title}</button>
         </InputGroup>
       </form>
     )}
   />
 );
 
-export default AddHolidayForm;
+EditHolidaysForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
+
+export default EditHolidaysForm;
