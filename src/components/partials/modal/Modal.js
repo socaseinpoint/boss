@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Modal = ({ header, children, onClose }) => (
   <>
-    <button type="button" className="boss-modal-window__close-inner" onClick={onClose} />
+    <button type="button" className="boss-modal-window__close" onClick={onClose} />
     <div className="boss-modal-window__header">{header}</div>
     <div className="boss-modal-window__content">
       <div className="boss-modal-window__form">
