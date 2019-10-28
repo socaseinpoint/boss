@@ -11,6 +11,7 @@ const Switcher = ({ nav, chapters }) => (
             return (
               <NavLink
                 to={navItem.to}
+                key={navItem.title}
                 className="boss-content-switcher__nav-link"
                 activeClassName="boss-content-switcher__nav-link_state_active"
               >

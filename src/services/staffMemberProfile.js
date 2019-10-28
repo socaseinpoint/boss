@@ -11,4 +11,16 @@ export const fetchStaffMember = (id) => {
   }).then((response) => response.json());
 };
 
+export const updateEmploymentDetails = (id, body) => {
+  return fetch(`${SERVER_BASE_URL}staff_members/${id}/update_employment_details`, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    headers: {
+      Authorization: 'Token token="4b960411f456c86f48edab5ed4c32059"',
+    },
+    body: JSON.stringify(body),
+  }).then((response) => response.json());
+};
+
 export default fetchStaffMember;

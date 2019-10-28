@@ -8,21 +8,22 @@ const staffMemberProfileReducer = (state = {}, action) => {
   switch (action.type) {
     case STAFF_MEMBER_PROFILE_REQUEST:
       return {
+        ...state,
         loading: true,
-        errors: false,
+        error: false,
       };
     case STAFF_MEMBER_PROFILE_SUCCESS:
       return {
         ...state,
         ...action.payload,
         loading: false,
-        errors: false,
+        error: false,
       };
     case STAFF_MEMBER_PROFILE_FAILURE:
       return {
         ...state,
         loading: false,
-        errors: action.err,
+        error: true,
       };
     default:
       return state;
