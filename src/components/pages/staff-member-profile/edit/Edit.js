@@ -1,12 +1,18 @@
 import React from 'react';
-import { Switch, Route, useRouteMatch, Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import {
+  Switch,
+  Route,
+  useRouteMatch,
+  Link,
+} from 'react-router-dom';
 import Dashboard from '../../../partials/dashboard';
 import Content from '../../../partials/content';
 import Switcher from '../../../partials/switcher';
 import Chapter from '../../../partials/switcher/chapter';
-//import EmploymentDetailsForm from '../../../partials/profile/edit/employment-details';
-//import ContactDetailsForm from '../../../partials/profile/edit/contact-details';
-//import PersonalDetailsForm from '../../../partials/profile/edit/personal-details';
+import EmploymentDetailsForm from '../../../partials/profile/edit/employment-details';
+import PersonalDetailsForm from '../../../partials/profile/edit/personal-details';
+import ContactDetailsForm from '../../../partials/profile/edit/contact-details';
 
 const StaffMemberProfileEdit = ({ id }) => {
   const { path } = useRouteMatch();
@@ -31,19 +37,25 @@ const StaffMemberProfileEdit = ({ id }) => {
                 exact
                 path={`${path}/employment`}
               >
-                <Chapter header="Employment Details">EmploymentDetailsForm</Chapter>
-              </Route>
-              <Route
-                exact
-                path={`${path}/contact`}
-              >
-                <Chapter header="Contact Details">ContactDetailsForm</Chapter>
+                <Chapter header="Employment Details">
+                  <EmploymentDetailsForm />
+                </Chapter>
               </Route>
               <Route
                 exact
                 path={`${path}/personal`}
               >
-                <Chapter header="Personal Details">PersonalDetailsForm</Chapter>
+                <Chapter header="Personal Details">
+                  <PersonalDetailsForm />
+                </Chapter>
+              </Route>
+              <Route
+                exact
+                path={`${path}/contact`}
+              >
+                <Chapter header="Contact Details">
+                  <ContactDetailsForm />
+                </Chapter>
               </Route>
             </Switch>
           )}
@@ -65,6 +77,10 @@ const StaffMemberProfileEdit = ({ id }) => {
       </Content>
     </>
   );
+};
+
+StaffMemberProfileEdit.propTypes = {
+  id: PropTypes.number.isRequired,
 };
 
 export default StaffMemberProfileEdit;
