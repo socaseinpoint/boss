@@ -8,6 +8,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { staffMemberProfileAsync } from '../../../actions/staffMemberProfile';
 import StaffMemberProfileDashboard from './dashboard';
+import StaffMemberProfileEdit from './edit';
 import DefaultLayout from '../../layouts/default';
 import Content from '../../partials/content';
 import Profile from './profile';
@@ -23,17 +24,23 @@ const StaffMemberProfile = () => {
 
   return (
     <DefaultLayout>
-      <StaffMemberProfileDashboard />
-      <Content>
-        <Switch>
-          <Route exact path={`${path}/profile`}>
+      <Switch>
+        <Route exact path={`${path}/profile`}>
+          <StaffMemberProfileDashboard />
+          <Content>
             <Profile />
-          </Route>
-          <Route exact path={`${path}/holidays`}>
+          </Content>
+        </Route>
+        <Route exact path={`${path}/holidays`}>
+          <StaffMemberProfileDashboard />
+          <Content>
             <Holidays />
-          </Route>
-        </Switch>
-      </Content>
+          </Content>
+        </Route>
+        <Route exact path={`${path}/edit/`}>
+          <StaffMemberProfileEdit />
+        </Route>
+      </Switch>
     </DefaultLayout>
   );
 };
