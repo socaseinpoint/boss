@@ -37,8 +37,8 @@ const StaffMemberProfile = () => {
             <Holidays />
           </Content>
         </Route>
-        <Route exact path={`${path}/edit/`}>
-          <StaffMemberProfileEdit />
+        <Route path={`${path}/edit`}>
+          <StaffMemberProfileEdit id={id} />
         </Route>
       </Switch>
     </DefaultLayout>

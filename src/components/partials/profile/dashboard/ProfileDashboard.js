@@ -30,7 +30,7 @@ const ProfileDashboard = ({
           />
         </div>
         <div className="boss-page-dashboard__buttons-group">
-          <Link to={`/staff-member-profile/${id}/edit`} className="boss-button boss-button_role_edit boss-page-dashboard__button">Edit Profile</Link>
+          <Link to={`/staff-member-profile/${id}/edit/employment`} className="boss-button boss-button_role_edit boss-page-dashboard__button">Edit Profile</Link>
           <button type="button" className="boss-button boss-button_role_block boss-page-dashboard__button">Disable Staff Member</button>
         </div>
       </div>
