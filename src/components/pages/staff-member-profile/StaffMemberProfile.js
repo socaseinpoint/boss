@@ -26,7 +26,7 @@ const StaffMemberProfile = () => {
 
   return (
     <DefaultLayout>
-      {!loading || !error ? (
+      {!loading && !error ? (
         <Switch>
           <Route exact path={`${path}/profile`}>
             <StaffMemberProfileDashboard />

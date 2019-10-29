@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'react-final-form';
 import Select from 'react-select';
 
 const customStyles = {
@@ -30,22 +29,22 @@ const customStyles = {
 const SelectInput = ({
   input: {
     name,
+    value,
     onChange,
+    defaultValue,
   },
   options,
-}) => (
-  <Field
-    name={name}
-    render={() => (
-      <Select
-        onChange={(newValue) => onChange(newValue)}
-        isSearchable="false"
-        styles={customStyles}
-        options={options}
-      />
-    )}
-  />
-);
+}) => {
+  return (
+    <Select
+      name={name}
+      value={value}
+      onChange={(newValue) => onChange(newValue)}
+      styles={customStyles}
+      options={options}
+    />
+  );
+};
 
 SelectInput.propTypes = {
   input: PropTypes.shape({

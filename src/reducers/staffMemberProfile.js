@@ -4,7 +4,10 @@ import {
   STAFF_MEMBER_PROFILE_FAILURE,
 } from '../constants/actionTypes';
 
-const staffMemberProfileReducer = (state = {}, action) => {
+const staffMemberProfileReducer = (state = {
+  loading: true,
+  error: false,
+}, action) => {
   switch (action.type) {
     case STAFF_MEMBER_PROFILE_REQUEST:
       return {

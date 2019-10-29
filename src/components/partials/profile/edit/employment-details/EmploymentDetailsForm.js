@@ -23,29 +23,43 @@ const EmploymentDetailsForm = ({
   hoursPreferenceNote,
   nationalInsuranceNumber,
   sageId,
+  mainVenueInitial,
+  otherVenuesInitial,
+  staffTypeInitial,
+  payRateInitial,
 }) => (
   <Form
     onSubmit={onSubmit}
+    initialValues={{
+      mainVenue: mainVenueInitial,
+      otherVenues: otherVenuesInitial,
+      staffType: staffTypeInitial,
+      payRate: payRateInitial,
+    }}
     render={({ handleSubmit }) => (
       <form onSubmit={handleSubmit} className="boss-form boss-form_page_profile-edit">
         <InputGroup>
           <Label>Main Venue</Label>
-          <Field name="name" component={SelectInput} options={venues} />
+          <Field
+            name="mainVenue"
+            component={SelectInput}
+            options={venues}
+          />
         </InputGroup>
         <InputGroup>
           <Label>Other Venues</Label>
-          <Field name="mainVenue" component={SelectInput} options={venues} />
+          <Field name="otherVenues" component={SelectInput} options={venues} />
         </InputGroup>
         <InputGroup>
-          <Label>Staff Type</Label>
+          <Label>Staff Type*</Label>
           <Field name="staffType" component={SelectInput} options={staffTypes} />
         </InputGroup>
         <InputGroup>
-          <Label>Starts At</Label>
+          <Label>Starts At*</Label>
           <Field name="startsAt" component={DatePickerInput} initialValue={startsAt} />
         </InputGroup>
         <InputGroup>
-          <Label>Pay Rate</Label>
+          <Label>Pay Rate*</Label>
           <Field name="payRate" component={SelectInput} options={payRates} />
         </InputGroup>
         <InputGroup>
@@ -102,6 +116,22 @@ EmploymentDetailsForm.propTypes = {
   hoursPreferenceNote: PropTypes.string,
   nationalInsuranceNumber: PropTypes.string,
   sageId: PropTypes.string,
+  mainVenueInitial: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+  }),
+  otherVenuesInitial: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+  }),
+  staffTypeInitial: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+  }),
+  payRateInitial: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+  }),
 };
 
 EmploymentDetailsForm.defaultProps = {
@@ -110,6 +140,10 @@ EmploymentDetailsForm.defaultProps = {
   hoursPreferenceNote: '',
   nationalInsuranceNumber: '',
   sageId: '',
+  mainVenueInitial: null,
+  otherVenuesInitial: null,
+  staffTypeInitial: null,
+  payRateInitial: null,
 };
 
 export default EmploymentDetailsForm;

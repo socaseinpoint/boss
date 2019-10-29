@@ -7,7 +7,7 @@ import {
   Link,
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { getEmploymentDetails } from '../../../../selectors/staff-member-profile/getEmploymentDetails';
+import { getEmploymentDetails } from '../../../../selectors/staff-member-profile/staff-member-profile/employmentDetails';
 import Dashboard from '../../../partials/dashboard';
 import Content from '../../../partials/content';
 import Switcher from '../../../partials/switcher';
@@ -52,6 +52,9 @@ const StaffMemberProfileEdit = ({ id }) => {
                       hoursPreferenceNote={staffMember.hoursPreferenceNote}
                       nationalInsuranceNumber={staffMember.nationalInsuranceNumber}
                       sageId={staffMember.sageId}
+                      mainVenueInitial={initialValues.mainVenueInitial}
+                      staffTypeInitial={initialValues.staffTypeInitial}
+                      payRateInitial={initialValues.payRateInitial}
                     />
                   </Chapter>
                 </Route>
@@ -63,8 +66,9 @@ const StaffMemberProfileEdit = ({ id }) => {
                     <PersonalDetailsForm
                       firstName={staffMember.firstName}
                       surname={staffMember.surname}
-                      dateOfBirth={staffMember.startsAt}
+                      dateOfBirth={staffMember.dateOfBirth}
                       gender={staffMember.gender}
+                      genderInitial={initialValues.genderInitial}
                     />
                   </Chapter>
                 </Route>

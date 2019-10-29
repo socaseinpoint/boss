@@ -16,20 +16,25 @@ function onSubmit(e) {
 const PersonalDetailsForm = ({
   firstName,
   surname,
-  gender,
   dateOfBirth,
+  genderInitial,
 }) => (
   <Form
     onSubmit={onSubmit}
+    initialValues={{
+      firstName,
+      surname,
+      gender: genderInitial,
+    }}
     render={({ handleSubmit }) => (
       <form onSubmit={handleSubmit} className="boss-form boss-form_page_profile-edit">
         <InputGroup>
           <Label>First name*</Label>
-          <Field type="text" name="firstName" component={Input} initialValue={firstName} />
+          <Field type="text" name="firstName" component={Input} />
         </InputGroup>
         <InputGroup>
           <Label>Surname*</Label>
-          <Field type="text" name="surname" component={Input} initialValue={surname} />
+          <Field type="text" name="surname" component={Input} />
         </InputGroup>
         <InputGroup>
           <Label>Gender*</Label>
@@ -37,7 +42,6 @@ const PersonalDetailsForm = ({
             type="text"
             name="gender"
             component={SelectInput}
-            initialValue={gender}
             options={[
               {
                 label: 'Male',
@@ -65,15 +69,15 @@ const PersonalDetailsForm = ({
 PersonalDetailsForm.propTypes = {
   firstName: PropTypes.string,
   surname: PropTypes.string,
-  gender: PropTypes.string,
   dateOfBirth: PropTypes.string,
+  genderInitial: PropTypes.any,
 };
 
 PersonalDetailsForm.defaultProps = {
   firstName: '',
   surname: '',
-  gender: '',
   dateOfBirth: '',
+  genderInitial: null,
 };
 
 export default PersonalDetailsForm;
