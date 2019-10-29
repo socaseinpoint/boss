@@ -16,10 +16,10 @@ const required = (value) => (value ? null : 'This is a required field!');
 const EditHolidaysForm = ({ onSubmit, title }) => (
   <Form
     onSubmit={onSubmit}
-    render={({ handleSubmit, pristine }) => (
+    render={({ handleSubmit, submitError }) => (
       <>
         {
-          !pristine && (
+          submitError && (
             <div className="boss-modal-window__alert">
               <div className="boss-alert boss-alert_role_area boss-alert_context_above">
                 <p className="boss-alert__text">There was a problem updating this holiday. Please check for errors and try again</p>

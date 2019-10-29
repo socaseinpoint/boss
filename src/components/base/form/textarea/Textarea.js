@@ -39,7 +39,7 @@ Textarea.propTypes = {
   }).isRequired,
   meta: PropTypes.shape({
     error: PropTypes.string,
-    touched: PropTypes.string,
+    touched: PropTypes.bool,
   }),
 };
 

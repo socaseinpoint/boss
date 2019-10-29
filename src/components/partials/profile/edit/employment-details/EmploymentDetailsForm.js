@@ -15,10 +15,10 @@ function onSubmit(e) {
 }
 
 const EmploymentDetailsForm = ({
-  venues,
-  staffTypes,
+  venuesOptions,
+  staffTypesOptions,
   startsAt,
-  payRates,
+  payRatesOptions,
   dayPreferenceNote,
   hoursPreferenceNote,
   nationalInsuranceNumber,
@@ -43,16 +43,16 @@ const EmploymentDetailsForm = ({
           <Field
             name="mainVenue"
             component={SelectInput}
-            options={venues}
+            options={venuesOptions}
           />
         </InputGroup>
         <InputGroup>
           <Label>Other Venues</Label>
-          <Field name="otherVenues" component={SelectInput} options={venues} isMulti />
+          <Field name="otherVenues" component={SelectInput} options={venuesOptions} isMulti />
         </InputGroup>
         <InputGroup>
           <Label>Staff Type*</Label>
-          <Field name="staffType" component={SelectInput} options={staffTypes} />
+          <Field name="staffType" component={SelectInput} options={staffTypesOptions} />
         </InputGroup>
         <InputGroup>
           <Label>Starts At*</Label>
@@ -60,7 +60,7 @@ const EmploymentDetailsForm = ({
         </InputGroup>
         <InputGroup>
           <Label>Pay Rate*</Label>
-          <Field name="payRate" component={SelectInput} options={payRates} />
+          <Field name="payRate" component={SelectInput} options={payRatesOptions} />
         </InputGroup>
         <InputGroup>
           <Label>Day preference</Label>
@@ -93,19 +93,19 @@ const EmploymentDetailsForm = ({
 );
 
 EmploymentDetailsForm.propTypes = {
-  venues: PropTypes.arrayOf(
+  venuesOptions: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       value: PropTypes.any.isRequired,
     }),
   ).isRequired,
-  staffTypes: PropTypes.arrayOf(
+  staffTypesOptions: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       value: PropTypes.any.isRequired,
     }),
   ).isRequired,
-  payRates: PropTypes.arrayOf(
+  payRatesOptions: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       value: PropTypes.any.isRequired,

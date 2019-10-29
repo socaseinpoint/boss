@@ -1,12 +1,12 @@
 export const getGender = (gender) => {
-  if (gender === 'Female' || gender === 'female') {
+  if (gender.toLowerCase() === 'female') {
     return {
       label: 'Female',
       value: 'Female',
     };
   }
 
-  if (gender === 'Male' || gender === 'male') {
+  if (gender.toLowerCase() === 'male') {
     return {
       label: 'Male',
       value: 'Male',

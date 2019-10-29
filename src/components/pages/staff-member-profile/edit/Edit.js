@@ -7,7 +7,7 @@ import {
   Link,
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { getEmploymentDetails } from '../../../../selectors/staff-member-profile/getEditDetails';
+import { getEditFormInitialValues } from '../../../../selectors/staff-member-profile/getEditFormInitialValues';
 import Dashboard from '../../../partials/dashboard';
 import Content from '../../../partials/content';
 import Switcher from '../../../partials/switcher';
@@ -18,7 +18,7 @@ import ContactDetailsForm from '../../../partials/profile/edit/contact-details';
 
 const StaffMemberProfileEdit = ({ id }) => {
   const { path } = useRouteMatch();
-  const initialValues = useSelector((state) => getEmploymentDetails(state));
+  const initialValues = useSelector((state) => getEditFormInitialValues(state));
   const { staffMember } = initialValues;
 
   return (
@@ -44,10 +44,10 @@ const StaffMemberProfileEdit = ({ id }) => {
                 >
                   <Chapter header="Employment Details">
                     <EmploymentDetailsForm
-                      venues={initialValues.venues}
-                      staffTypes={initialValues.staffTypes}
+                      venuesOptions={initialValues.venuesOptions}
+                      staffTypesOptions={initialValues.staffTypesOptions}
                       startsAt={staffMember.startsAt}
-                      payRates={initialValues.payRates}
+                      payRatesOptions={initialValues.payRatesOptions}
                       dayPreferenceNote={staffMember.dayPreferenceNote}
                       hoursPreferenceNote={staffMember.hoursPreferenceNote}
                       nationalInsuranceNumber={staffMember.nationalInsuranceNumber}
@@ -68,7 +68,6 @@ const StaffMemberProfileEdit = ({ id }) => {
                       firstName={staffMember.firstName}
                       surname={staffMember.surname}
                       dateOfBirth={staffMember.dateOfBirth}
-                      gender={staffMember.gender}
                       genderInitial={initialValues.genderInitial}
                     />
                   </Chapter>

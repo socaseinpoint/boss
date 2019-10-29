@@ -55,13 +55,13 @@ class DateRangeInput extends React.Component {
 
     return (
       <DateRangePicker
-        startDate={startDate} // momentPropTypes.momentObj or null,
-        startDateId="unique_start_date_id" // PropTypes.string.isRequired,
-        endDate={endDate} // momentPropTypes.momentObj or null,
-        endDateId="unique_end_date_id" // PropTypes.string.isRequired,
-        onDatesChange={this.handleDatesChange} // PropTypes.func.isRequired,
-        focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
-        onFocusChange={this.handleFocusChange} // PropTypes.func.isRequired,
+        startDate={startDate}
+        startDateId="unique_start_date_id"
+        endDate={endDate}
+        endDateId="unique_end_date_id"
+        onDatesChange={this.handleDatesChange}
+        focusedInput={focusedInput}
+        onFocusChange={this.handleFocusChange}
         displayFormat={dateFormat}
         block={block}
         small={small}
