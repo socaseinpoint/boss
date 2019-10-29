@@ -1,7 +1,7 @@
-import { getStaffType } from '../helpers/getStaffType';
-import { getVenue } from '../helpers/getVenue';
-import { getPayRate } from '../helpers/getPayRate';
-import { getGender } from '../helpers/getGender';
+import { getStaffType } from './helpers/getStaffType';
+import { getVenue } from './helpers/getVenue';
+import { getPayRate } from './helpers/getPayRate';
+import { getGender } from './helpers/getGender';
 
 export const getEmploymentDetails = (state) => {
   const {

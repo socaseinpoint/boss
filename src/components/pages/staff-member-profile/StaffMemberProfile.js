@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getStatus } from '../../../selectors/staff-member-profile/getStatus';
-import { staffMemberProfileAsync } from '../../../actions/staffMemberProfile';
+import { getStaffMemberProfile } from '../../../actions/staffMemberProfile';
 import StaffMemberProfileDashboard from './dashboard';
 import StaffMemberProfileEdit from './edit';
 import DefaultLayout from '../../layouts/default';
@@ -21,7 +21,7 @@ const StaffMemberProfile = () => {
   const { id } = useParams();
   const { loading, error } = useSelector((state) => getStatus(state));
   useEffect(() => {
-    dispatch(staffMemberProfileAsync(id));
+    dispatch(getStaffMemberProfile(id));
   }, [id, dispatch]);
 
   return (

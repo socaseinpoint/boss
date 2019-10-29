@@ -20,7 +20,7 @@ export const staffMemberProfileFailure = (error) => ({
   error,
 });
 
-export const staffMemberProfileAsync = (id) => (
+export const getStaffMemberProfile = (id) => (
   (dispatch) => {
     dispatch(staffMemberProfileRequest);
     fetchStaffMember(id).then((payload) => {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 
@@ -31,20 +31,17 @@ const SelectInput = ({
     name,
     value,
     onChange,
-    defaultValue,
   },
   options,
-}) => {
-  return (
-    <Select
-      name={name}
-      value={value}
-      onChange={(newValue) => onChange(newValue)}
-      styles={customStyles}
-      options={options}
-    />
-  );
-};
+}) => (
+  <Select
+    name={name}
+    value={value}
+    onChange={(newValue) => onChange(newValue)}
+    styles={customStyles}
+    options={options}
+  />
+);
 
 SelectInput.propTypes = {
   input: PropTypes.shape({

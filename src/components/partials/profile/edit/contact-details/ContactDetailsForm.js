@@ -6,9 +6,11 @@ import {
   InputGroup,
   Label,
 } from '../../../../base/form';
+import { updateContactDetails } from '../../../../../services/staffMemberProfile';
 
 function onSubmit(e) {
   console.log(e);
+  updateContactDetails(4653, e);
 }
 
 const ContactDetailsForm = ({

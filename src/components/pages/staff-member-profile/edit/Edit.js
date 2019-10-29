@@ -7,7 +7,7 @@ import {
   Link,
 } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { getEmploymentDetails } from '../../../../selectors/staff-member-profile/staff-member-profile/employmentDetails';
+import { getEmploymentDetails } from '../../../../selectors/staff-member-profile/getEditDetails';
 import Dashboard from '../../../partials/dashboard';
 import Content from '../../../partials/content';
 import Switcher from '../../../partials/switcher';
