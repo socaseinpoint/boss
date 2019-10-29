@@ -55,6 +55,7 @@ const StaffMemberProfileEdit = ({ id }) => {
                       mainVenueInitial={initialValues.mainVenueInitial}
                       staffTypeInitial={initialValues.staffTypeInitial}
                       payRateInitial={initialValues.payRateInitial}
+                      otherVenueInitial={initialValues.otherVenueInitial}
                     />
                   </Chapter>
                 </Route>

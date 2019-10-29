@@ -27,14 +27,15 @@ const EmploymentDetailsForm = ({
   otherVenuesInitial,
   staffTypeInitial,
   payRateInitial,
+  otherVenueInitial,
 }) => (
   <Form
     onSubmit={onSubmit}
     initialValues={{
       mainVenue: mainVenueInitial,
-      otherVenues: otherVenuesInitial,
       staffType: staffTypeInitial,
       payRate: payRateInitial,
+      otherVenues: otherVenueInitial,
     }}
     render={({ handleSubmit }) => (
       <form onSubmit={handleSubmit} className="boss-form boss-form_page_profile-edit">
@@ -48,7 +49,7 @@ const EmploymentDetailsForm = ({
         </InputGroup>
         <InputGroup>
           <Label>Other Venues</Label>
-          <Field name="otherVenues" component={SelectInput} options={venues} />
+          <Field name="otherVenues" component={SelectInput} options={venues} isMulti />
         </InputGroup>
         <InputGroup>
           <Label>Staff Type*</Label>
@@ -120,10 +121,6 @@ EmploymentDetailsForm.propTypes = {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
   }),
-  otherVenuesInitial: PropTypes.shape({
-    label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
-  }),
   staffTypeInitial: PropTypes.shape({
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
@@ -132,6 +129,12 @@ EmploymentDetailsForm.propTypes = {
     label: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
   }),
+  otherVenueInitial: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    }),
+  ),
 };
 
 EmploymentDetailsForm.defaultProps = {
@@ -141,9 +144,9 @@ EmploymentDetailsForm.defaultProps = {
   nationalInsuranceNumber: '',
   sageId: '',
   mainVenueInitial: null,
-  otherVenuesInitial: null,
   staffTypeInitial: null,
   payRateInitial: null,
+  otherVenueInitial: null,
 };
 
 export default EmploymentDetailsForm;

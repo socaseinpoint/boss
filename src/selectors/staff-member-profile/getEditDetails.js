@@ -7,6 +7,7 @@ export const getEmploymentDetails = (state) => {
   const {
     staffTypeId,
     masterVenueId,
+    otherVenueIds,
     payRateId,
     gender,
   } = state.staffMemberProfile.staffMember;
@@ -18,6 +19,7 @@ export const getEmploymentDetails = (state) => {
   const staffTypeInitial = getStaffType(staffTypes, staffTypeId);
   const mainVenueInitial = getVenue(venues, masterVenueId);
   const payRateInitial = getPayRate(payRates, payRateId);
+  const otherVenueInitial = otherVenueIds.map((id) => getVenue(venues, id));
 
   staffTypes = staffTypes.map((item) => ({
     label: item.name,
@@ -45,6 +47,7 @@ export const getEmploymentDetails = (state) => {
     mainVenueInitial,
     payRateInitial,
     genderInitial,
+    otherVenueInitial,
   };
 };
 

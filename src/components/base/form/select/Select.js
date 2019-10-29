@@ -33,6 +33,7 @@ const SelectInput = ({
     onChange,
   },
   options,
+  isMulti,
 }) => (
   <Select
     name={name}
@@ -40,6 +41,7 @@ const SelectInput = ({
     onChange={(newValue) => onChange(newValue)}
     styles={customStyles}
     options={options}
+    isMulti={isMulti}
   />
 );
 
@@ -47,6 +49,7 @@ SelectInput.propTypes = {
   input: PropTypes.shape({
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
+    isMulti: PropTypes.bool,
   }).isRequired,
   options: PropTypes.arrayOf(
     PropTypes.shape({
@@ -54,6 +57,11 @@ SelectInput.propTypes = {
       value: PropTypes.any.isRequired,
     }).isRequired,
   ).isRequired,
+  isMulti: PropTypes.bool,
+};
+
+SelectInput.defaultProps = {
+  isMulti: false,
 };
 
 export default SelectInput;
