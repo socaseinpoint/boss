@@ -6,7 +6,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getStatus } from '../../../selectors/staff-member-profile/getStatus';
+import { getStatus } from '../../../selectors/staff-member-profile';
 import { getStaffMemberProfile } from '../../../actions/staffMemberProfile';
 import StaffMemberProfileDashboard from './dashboard';
 import StaffMemberProfileEdit from './edit';

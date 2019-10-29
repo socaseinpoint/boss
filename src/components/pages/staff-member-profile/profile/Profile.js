@@ -6,7 +6,7 @@ import { getProfileDetails } from '../../../../selectors/staff-member-profile/ge
 const Profile = () => {
   const description = useSelector((state) => getProfileDetails(state));
 
-  return (<ProfileDescription description={description} />);
+  return (description ? <ProfileDescription description={description} /> : null);
 };
 
 export default Profile;

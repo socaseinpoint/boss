@@ -13,9 +13,12 @@ const ProfileDescription = ({ description }) => (
 );
 
 ProfileDescription.propTypes = {
-  description: PropTypes.arrayOf(
-    PropTypes.any.isRequired,
-  ).isRequired,
+  description: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    data: PropTypes.arrayOf(
+      PropTypes.any.isRequired,
+    ).isRequired,
+  }).isRequired,
 };
 
 export default ProfileDescription;
