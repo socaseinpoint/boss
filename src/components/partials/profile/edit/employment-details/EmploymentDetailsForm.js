@@ -24,7 +24,6 @@ const EmploymentDetailsForm = ({
   nationalInsuranceNumber,
   sageId,
   mainVenueInitial,
-  otherVenuesInitial,
   staffTypeInitial,
   payRateInitial,
   otherVenueInitial,
