@@ -1,4 +1,4 @@
-export const getGender = (gender) => {
+export const formatGenderOption = (gender) => {
   if (gender.toLowerCase() === 'female') {
     return {
       label: 'Female',
@@ -16,4 +16,4 @@ export const getGender = (gender) => {
   return null;
 };
 
-export default getGender;
+export default formatGenderOption;

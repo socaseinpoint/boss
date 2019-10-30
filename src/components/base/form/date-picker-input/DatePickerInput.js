@@ -12,7 +12,7 @@ class DateRangeInput extends React.Component {
     const { input } = this.props;
     const { value } = input;
 
-    let date = moment();
+    let date = null;
 
     if (value) {
       date = moment(value, 'DD-MM-YYYY');

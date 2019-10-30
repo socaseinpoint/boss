@@ -1,4 +1,4 @@
-export const getOption = (list, id) => {
+export const findOption = (list, id) => {
   const option = list.find((item) => item.id === id);
 
   if (option) {
@@ -11,4 +11,4 @@ export const getOption = (list, id) => {
   return null;
 };
 
-export default getOption;
+export default findOption;

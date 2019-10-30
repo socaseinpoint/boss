@@ -1,63 +1,67 @@
-export const getProfileDescription = (state) => {
-  const profile = state.staffMemberProfile;
-  const member = profile.staffMember;
-  const { payRates } = profile;
-  const { venues } = profile;
-  const { otherVenueIds } = member;
+import { createSelector } from 'reselect';
+import { getStaffMember, getPayRates, getVenues } from '.';
 
-  const otherVenues = otherVenueIds.map((id) => {
-    const venueFound = venues.find((venue) => venue.id === id);
-    if (venueFound) {
-      return venueFound;
-    }
-    return null;
-  });
+export const getProfileDescription = createSelector(
+  getStaffMember,
+  getPayRates,
+  getVenues,
+  (staffMember, payRates, venues) => {
+    /*
+    * Employment Details
+    */
+    const { otherVenueIds } = staffMember;
 
-  /*
-  * Employment Details
-  */
-  const startDate = member.startsAt;
-  const payRate = payRates.find((item) => item.id === member.payRateId).name;
-  const hourPreference = member.hoursPreferenceNote;
-  const dayPreference = member.dayPreferenceNote;
-  const { nationalInsuranceNumber } = member;
-  const { sageId } = member;
-  const { statusStatement } = member;
+    const otherVenues = otherVenueIds.map((id) => {
+      const venueFound = venues.find((venue) => venue.id === id);
+      if (venueFound) {
+        return venueFound;
+      }
+      return null;
+    });
 
-  /*
-  * Account Details
-  */
-  const created = member.createdAt;
-  const status = !member.isDisabled ? 'Active' : 'Disabled';
-  const applicationPassword = member.passwordSetAt;
+    const startDate = staffMember.startsAt;
+    const payRate = payRates.find((item) => item.id === staffMember.payRateId).name;
+    const hourPreference = staffMember.hoursPreferenceNote;
+    const dayPreference = staffMember.dayPreferenceNote;
+    const { nationalInsuranceNumber } = staffMember;
+    const { sageId } = staffMember;
+    const { statusStatement } = staffMember;
 
-  /*
-  * Personal Details
-  */
-  const { gender } = member;
-  const { dateOfBirth } = member;
+    /*
+    * Account Details
+    */
+    const created = staffMember.createdAt;
+    const status = !staffMember.isDisabled ? 'Active' : 'Disabled';
+    const applicationPassword = staffMember.passwordSetAt;
 
-  /*
-  * Contact Details
-  */
-  const { address } = member;
+    /*
+    * Personal Details
+    */
+    const { gender } = staffMember;
+    const { dateOfBirth } = staffMember;
 
-  return {
-    otherVenues,
-    startDate,
-    payRate,
-    hourPreference,
-    dayPreference,
-    nationalInsuranceNumber,
-    sageId,
-    statusStatement,
-    created,
-    status,
-    applicationPassword,
-    gender,
-    dateOfBirth,
-    address,
-  };
-};
+    /*
+    * Contact Details
+    */
+    const { address } = staffMember;
+
+    return {
+      otherVenues,
+      startDate,
+      payRate,
+      hourPreference,
+      dayPreference,
+      nationalInsuranceNumber,
+      sageId,
+      statusStatement,
+      created,
+      status,
+      applicationPassword,
+      gender,
+      dateOfBirth,
+      address,
+    };
+  },
+);
 
 export default getProfileDescription;

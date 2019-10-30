@@ -1,17 +1,19 @@
-export const isProfileLoading = (state) => {
-  const profile = state.staffMemberProfile;
-  if (profile.loading) {
-    return true;
-  }
+import { createSelector } from 'reselect';
 
-  return false;
-};
+export const getStaffMemberProfile = (state) => state.staffMemberProfile;
+export const getStaffMember = (state) => state.staffMemberProfile.staffMember;
+export const getPayRates = (state) => state.staffMemberProfile.payRates;
+export const getVenues = (state) => state.staffMemberProfile.venues;
+export const getStaffTypes = (state) => state.staffMemberProfile.staffTypes;
 
-export const getStatus = (state) => {
-  const status = {
-    loading: state.staffMemberProfile.loading,
-    error: state.staffMemberProfile.error,
-  };
+export const getStaffMemberProfileStatus = createSelector(
+  getStaffMemberProfile,
+  (staffMemberProfile) => {
+    const status = {
+      loading: staffMemberProfile.loading,
+      error: staffMemberProfile.error,
+    };
 
-  return status;
-};
+    return status;
+  },
+);

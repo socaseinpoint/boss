@@ -6,7 +6,7 @@ import {
   useParams,
 } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getStatus } from '../../../selectors/staff-member-profile';
+import { getStaffMemberProfileStatus } from '../../../selectors/staff-member-profile';
 import { getStaffMemberProfile } from '../../../actions/staffMemberProfile';
 import StaffMemberProfileDashboard from './dashboard';
 import StaffMemberProfileEdit from './edit';
@@ -19,7 +19,7 @@ const StaffMemberProfile = () => {
   const { path } = useRouteMatch();
   const dispatch = useDispatch();
   const { id } = useParams();
-  const { loading, error } = useSelector((state) => getStatus(state));
+  const { loading, error } = useSelector((state) => getStaffMemberProfileStatus(state));
   useEffect(() => {
     dispatch(getStaffMemberProfile(id));
   }, [id, dispatch]);

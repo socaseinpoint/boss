@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getProfileSummary } from '../../../../selectors/staff-member-profile/getProfileSummary';
+import { getProfileSummary } from '../../../../selectors/staff-member-profile/profileSummary';
 import Dashboard from '../../../partials/dashboard';
 import ProfileDashboard from '../../../partials/profile/dashboard';
 
