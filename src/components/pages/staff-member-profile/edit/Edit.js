@@ -67,6 +67,7 @@ const StaffMemberProfileEdit = ({ id }) => {
               >
                 <Chapter header="Employment Details">
                   <EmploymentDetailsForm
+                    id={id}
                     venuesOptions={venuesOptions}
                     staffTypesOptions={staffTypesOptions}
                     startsAt={startsAt}
@@ -88,6 +89,7 @@ const StaffMemberProfileEdit = ({ id }) => {
               >
                 <Chapter header="Personal Details">
                   <PersonalDetailsForm
+                    id={id}
                     firstName={firstName}
                     surname={surname}
                     dateOfBirth={dateOfBirth}
@@ -101,6 +103,7 @@ const StaffMemberProfileEdit = ({ id }) => {
               >
                 <Chapter header="Contact Details">
                   <ContactDetailsForm
+                    id={id}
                     email={email}
                     phoneNumber={phoneNumber}
                     address={address}

@@ -8,23 +8,26 @@ import {
   Label,
   DatePickerInput,
 } from '../../../../base/form';
+import { updatePersonalDetails } from '../../../../../services/staffMemberProfile';
 
-function onSubmit(e) {
-  console.log(e);
+function onSubmit(fields, id) {
+  updatePersonalDetails(id, fields);
 }
 
 const PersonalDetailsForm = ({
+  id,
   firstName,
   surname,
   dateOfBirth,
   genderInitial,
 }) => (
   <Form
-    onSubmit={onSubmit}
+    onSubmit={(fields) => onSubmit(fields, id)}
     initialValues={{
       firstName,
       surname,
       gender: genderInitial,
+      dateOfBirth,
     }}
     render={({ handleSubmit }) => (
       <form onSubmit={handleSubmit} className="boss-form boss-form_page_profile-edit">
@@ -56,7 +59,7 @@ const PersonalDetailsForm = ({
         </InputGroup>
         <InputGroup>
           <Label>Date of birth*</Label>
-          <Field name="dateOfBirth" component={DatePickerInput} initialValue={dateOfBirth} />
+          <Field name="dateOfBirth" component={DatePickerInput} />
         </InputGroup>
         <div className="boss-form__field boss-form__field_justify_end">
           <button className="boss-button boss-form__submit boss-form__submit_adjust_single" type="submit">Save</button>
@@ -67,6 +70,7 @@ const PersonalDetailsForm = ({
 );
 
 PersonalDetailsForm.propTypes = {
+  id: PropTypes.string.isRequired,
   firstName: PropTypes.string,
   surname: PropTypes.string,
   dateOfBirth: PropTypes.string,

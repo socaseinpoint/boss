@@ -9,9 +9,10 @@ import {
   DatePickerInput,
   FieldNote,
 } from '../../../../base/form';
+import { updateEmploymentDetails } from '../../../../../services/staffMemberProfile';
 
-function onSubmit(e) {
-  console.log(e);
+function onSubmit(fields, id) {
+  updateEmploymentDetails(id, fields);
 }
 
 const EmploymentDetailsForm = ({
@@ -27,9 +28,10 @@ const EmploymentDetailsForm = ({
   staffTypeInitial,
   payRateInitial,
   otherVenueInitial,
+  id,
 }) => (
   <Form
-    onSubmit={onSubmit}
+    onSubmit={(fields) => onSubmit(fields, id)}
     initialValues={{
       mainVenue: mainVenueInitial,
       staffType: staffTypeInitial,
@@ -93,6 +95,7 @@ const EmploymentDetailsForm = ({
 );
 
 EmploymentDetailsForm.propTypes = {
+  id: PropTypes.string.isRequired,
   venuesOptions: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,

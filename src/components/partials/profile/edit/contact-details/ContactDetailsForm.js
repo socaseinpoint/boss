@@ -8,12 +8,12 @@ import {
 } from '../../../../base/form';
 import { updateContactDetails } from '../../../../../services/staffMemberProfile';
 
-function onSubmit(e) {
-  console.log(e);
-  updateContactDetails(4653, e);
+function onSubmit(fields, id) {
+  updateContactDetails(id, fields);
 }
 
 const ContactDetailsForm = ({
+  id,
   email,
   phoneNumber,
   address,
@@ -21,12 +21,12 @@ const ContactDetailsForm = ({
   country,
 }) => (
   <Form
-    onSubmit={onSubmit}
+    onSubmit={(fields) => onSubmit(fields, id)}
     render={({ handleSubmit }) => (
       <form onSubmit={handleSubmit} className="boss-form boss-form_page_profile-edit">
         <InputGroup>
           <Label>Email</Label>
-          <Field type="text" name="firstName" component={Input} initialValue={email} />
+          <Field type="text" name="emailAddress" component={Input} initialValue={email} />
         </InputGroup>
         <InputGroup>
           <Label>Phone Number</Label>
@@ -44,6 +44,10 @@ const ContactDetailsForm = ({
           <Label>Country</Label>
           <Field type="text" name="country" component={Input} initialValue={country} />
         </InputGroup>
+        <InputGroup>
+          <Label>County</Label>
+          <Field type="text" name="county" component={Input} />
+        </InputGroup>
         <div className="boss-form__field boss-form__field_justify_end">
           <button className="boss-button boss-form__submit boss-form__submit_adjust_single" type="submit">Save</button>
         </div>
@@ -53,6 +57,7 @@ const ContactDetailsForm = ({
 );
 
 ContactDetailsForm.propTypes = {
+  id: PropTypes.string.isRequired,
   email: PropTypes.string,
   phoneNumber: PropTypes.string,
   address: PropTypes.string,

@@ -30,6 +30,8 @@ class DateRangeInput extends React.Component {
 
   onDateChange(date) {
     this.setState(() => ({ date }));
+    const { onChange } = this.props.input;
+    onChange((date));
   }
 
   onFocusChange({ focused }) {
